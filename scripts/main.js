@@ -1,7 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
-beer: [],
+beers: [],
     },
 
     created: function () {
@@ -23,8 +23,8 @@ beer: [],
                     }
 
                 }).then(function (json) {
-                app.beer = json;
-                console.log(app.beer);
+                app.beers = json;
+                console.log(app.beers);
 
 
                 }).catch(function (error) {
