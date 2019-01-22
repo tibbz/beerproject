@@ -1,13 +1,14 @@
 var app = new Vue({
     el: '#app',
     data: {
-beers: [],
+        beers: [],
+  
     },
 
     created: function () {
         
         this.calljson();
-
+  
     },
 
     methods: {
@@ -32,6 +33,38 @@ beers: [],
                 });
             }
         },
+
+        callinput: function () {
+            var flag = false;
+            this.beerbutton = document.getElementById("beersearch").value;
+            this.beername = Array.from(document.getElementsByTagName("h3"));
+            this.beerfilter = Array.from(document.getElementsByClassName("beersquare"));
+            var contador= 0;
+
+            for (var b = 0; b < this.beerfilter.length; b++) {
+                if (this.beerfilter[b].innerHTML.toUpperCase().includes(this.beerbutton.toUpperCase())) {
+                    this.beerfilter[b].style.display = "block";
+                    flag = true;
+                    
+                } else {
+                    this.beerfilter[b].style.display = "none";
+                    contador = contador +1;
+    
+                    
+                } if (contador === this.beerfilter.length) {
+                    // alert("no beers found by search criteria");
+                    document.getElementById("meme").style.display= "block";
+                }
+            }
+
+
+        }
+
+    
+
+        
+
+       
 
     }
 })

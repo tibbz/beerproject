@@ -8846,12 +8846,16 @@ img {
     }
 }
 
+body {
+    background-color: #cccccc85;
+}
+
 .beerprojectweb {
 width: 100%;
 height: 80%;
 }
 
-.bodybeer {
+.frontface {
     width: 30%;
     background-color:#f5f5dca1;
     margin-bottom: 20px;
@@ -8868,11 +8872,112 @@ height: 80%;
 }
 
 .pic {
-    width: 150px;
-    height: 350px;
+    width: 120px;
+    height: 270px;
 }
 
 .allbeers{
     display: flex;
     flex-wrap: wrap;
+}
+
+#f1_container {
+    margin-bottom: 3%;
+    margin-right: 2%;
+    margin-left: 1.6%;
+    padding: 30px;
+    width: 300px;
+    height: 500px;
+    z-index: 1;
+}
+
+#f1_card {
+    transform-style: preserve-3d;
+    transition: all 1.0s linear;
+    width: 280px;
+    height: 480px;
+}
+
+#f1_container:hover #f1_card {
+    width: 300px;
+    height: 480px;
+    transform: rotateY(3.142rad);
+    box-shadow: -5px 5px 5px rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 3%;
+    margin-right: 2%;
+    margin-left: 1.6%;
+}
+
+.beerfilter {
+    width: 30%;
+    margin-bottom: 30px;
+    margin-left: 35%;
+}
+
+.searcher {
+    width: 100%;
+    border:whitesmoke 3px solid;
+}
+
+#beertit {
+    
+}
+
+.back.face.enter {
+    background-color: #fffafacf;
+    display: flex;
+    flex-direction: column;
+    transform: rotateY(3.142rad);
+    color: black;
+    font-family: helvetica;
+    font-size: 12px;
+    justify-content: center;
+    padding: 20px;
+    backface-visibility: hidden;
+    width: 300px;
+    height: 480px;
+    text-align: center;
+}
+
+.front.face{
+    position: absolute;
+    width: 280px;
+    height: 480px;
+    backface-visibility: hidden;
+    text-align: center;
+    padding-top: 10%;
+    padding-right: 22%;
+    padding-left: 22%;
+    border: whitesmoke 2px solid;
+} 
+
+.food {
+    text-align: left;
+}
+
+.tips {
+    text-align: left;
+}
+
+.desc {
+    font-style: italic;
+}
+
+.meme {
+    display: none;
+    width: 80%;
+    height: 50%;
+    margin-bottom: 30px;
+    margin-left: 34%;
+}
+
+.beermeme {
+    width: 40%;
+    height: 30%;
+    border-radius: 20px;
+}
+
+.nope {
+    margin-left: 74px;
 }

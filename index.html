@@ -10,7 +10,7 @@
 <div id="app">
     <div class="beerprojectweb">
 
-        <header class="center f5 measure-wide lh-copy mb5-ns ph0-ns ph3">
+      <header class="center f5 measure-wide lh-copy mb5-ns ph0-ns ph3">
                 <h1 class="f-subheadline lh-solid ttu tc code relative mb5-ns mb4">
                   <div class="bottle absolute-ns">
                     <div class="bottle-face">
@@ -93,18 +93,44 @@
                       </svg>
                     </div>
                   </div>
-                  <a href="/" class="black no-underline"> The Beer Store </a>
+                  <a class="black no-underline" id="beertit"> The Beer Store </a>
                 </h1>
-              </header>
+      </header>
 
-              <div class="allbeers">
-        <div class="bodybeer" v-for="beer in beers">
-            <img class="pic" v-bind:src="beer.image_url">
-            <p class="namez">{{beer.name}}</p>
-            <p class="tag">{{beer.tagline}}</p>
-            <p class="abv">{{beer.abv}}%ABV</p>
+<div class="beerfilter">
+    <input type="text" class="searcher" id="beersearch" placeholder="search by any word" @keyup="callinput" autofocus />
+</div>
+
+      <div class="allbeers" >
+        <div id="f1_container" v-for="beer in beers" class="beersquare">
+          <div id="f1_card" class="shadow">
+
+            <div class="front face" >
+              <img class="pic" v-bind:src="beer.image_url">
+              <h3 class="namez">{{beer.name}}</h3>
+              <p class="tag">{{beer.tagline}}</p>
+              <p class="abv">{{beer.abv}}%ABV</p>
+            </div>
+            <div class="back face enter" >
+              <p class="desc">{{beer.description}}</p>
+              <h4 class="tips">Brewers tips:</h4>
+              <p class="tips">{{beer.brewers_tips}}</p>
+              <h4 class="food">Food pairing:</h4>
+              <ul id="foodlist" class="food">
+                <li v-for="food in beer.food_pairing">{{food}}</li>
+              </ul>
+              <p>Contributed by:<br>{{beer.contributed_by}}</p>
+            </div>
+
+          </div>
         </div>
-    </div>
+      </div>
+
+      <div class="meme" id="meme">
+        <h3 class="nope">Sorry, no beers found by that criteria</h3>
+        <img class="beermeme" src="style/confused-beer_o_2122085.jpg" alt="confused beer">
+      </div>
+
 
 
     </div>
